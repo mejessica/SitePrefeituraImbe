@@ -2,6 +2,33 @@ body{
     overflow-x: hidden;
 }
 
+.container-botoes {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+}
+
+.botao {
+    width: 10rem;
+    text-align: center;
+    font-size: 20px;
+}
+
+.container-icones {
+    width: 6.875rem;
+    height: 6.875rem;
+    background-color: #F26500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.container-icones img {
+    height: 3.438rem;
+    display: block;
+}
+
 .ver-noticias{
     margin-top: 50rem;
     font-weight: 200;
