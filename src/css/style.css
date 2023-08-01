@@ -68,7 +68,7 @@ body{
     right: 0;
     z-index: 1;
     display: flex;
-    top: 73rem;
+    top: 83rem;
 }
 
 .botao-passar #flecha{
@@ -107,9 +107,22 @@ body{
     font-size: 2.5rem;
 }
 
-.foto-galeria{
-    margin-left: 10rem;
-    width: 100rem;
-    margin-bottom: 5rem;
+.container-fotos{
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    transform: translateX(0);
     
+}
+.carrossel-fotos{
+    overflow:hidden;
+    width: 60rem;
+    height:40rem;
+    margin-left: 20rem;
+    margin-bottom: 20rem;
+}
+
+.foto-galeria{
+    object-fit: cover;
+    width: 60rem;
+    height: 40rem;
 }
