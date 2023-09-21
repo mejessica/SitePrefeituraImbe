@@ -1,4 +1,4 @@
-body{
+body {
     overflow-x: hidden;
 }
 
@@ -29,38 +29,65 @@ body{
     display: block;
 }
 
-.ver-noticias{
+.ver-noticias {
     margin-top: 50rem;
     font-weight: 200;
     text-transform: uppercase;
     background-color: #FF8654;
     width: 35rem;
-    height:4rem;
+    height: 4rem;
     display: flex;
     justify-content: left;
     align-items: center;
     margin-left: 10rem;
     margin-bottom: 20px;
-    padding-left: 20px ;
+    padding-left: 20px;
     box-shadow: 5px 5px 15px grey;
 }
 
-.ver-noticias a{
+.ver-noticias a {
     color: #fff;
 }
 
-.noticias{
+.carrossel-noticia .noticias {
+    white-space: nowrap;
+    cursor: pointer;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.noticias {
     margin-left: 10rem;
     display: flex;
     margin-bottom: 5rem;
-}
-.noticias img{
-    margin-right: 20px;
-    width: 35rem;
-    height: 40rem;
+
 }
 
-.botao-passar{
+.noticias.dragging {
+    cursor: grab;
+    scroll-behavior: auto;
+}
+
+.noticias.dragging img{
+    pointer-events: none;
+}
+
+.noticias img {
+    margin-right: 20px;
+    width: 35rem;
+    height: calc(100% / 10);
+    object-fit: cover;
+    cursor: pointer;
+
+}
+
+.noticias img:hover {
+    filter: brightness(.7) saturate(9%);
+    /*para dar um efeito de brilho*/
+    transition: 0.2s;
+}
+
+/* .botao-passar-direita{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -68,61 +95,117 @@ body{
     right: 0;
     z-index: 1;
     display: flex;
-    top: 83rem;
+    top: 78rem;
 }
 
-.botao-passar #flecha{
+.botao-passar-direita #flecha{
     position: absolute;
     justify-content: center;
     align-items: center;
     width: 25px;
     height: 25px;
+} */
+.carrossel-noticia {
+    position: relative;
 }
 
-.botoes-pesquisar-noticias{
+.carrossel-noticia i {
+    height: 70px;
+    width: 70px;
+    cursor: pointer;
+    font-size: 2rem;
+    text-align: center;
+    line-height: 70px;
+    background-color: #F26500;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.carrossel-noticia i:first-child {
+    left: -23px;
+    left: 10%;
+    z-index: 1;
+}
+
+.carrossel-noticia i:last-child {
+    right: -23px;
+    right: 1%;
+}
+
+.opacidade {
+    opacity: 0.6;
+    cursor: default;
+    /*sem clique*/
+}
+
+
+.botoes-pesquisar-noticias {
     display: flex;
     justify-content: end;
     margin-right: 5rem;
 }
 
-.botoes-pesquisar-noticias h2{
-    margin-left:3rem;
+.botoes-pesquisar-noticias h2 {
+    margin-left: 3rem;
     background-color: #FF9041;
     padding: 15px 25px;
     border-radius: 50px;
-    
+
 }
 
-.botoes-pesquisar-noticias h2 a{
+.botoes-pesquisar-noticias h2 a {
     color: #fff;
     font-weight: 200;
     font-size: 1.5rem;
     text-transform: uppercase;
 }
 
-.galeria-fotos{
+.galeria-fotos {
     color: #4B7886;
     font-weight: 800;
     margin: 8rem 0 3rem 10rem;
     font-size: 2.5rem;
 }
 
-.container-fotos{
+.container-fotos {
     display: flex;
     transition: transform 0.5s ease-in-out;
     transform: translateX(0);
-    
+
 }
-.carrossel-fotos{
-    overflow:hidden;
-    width: 60rem;
-    height:40rem;
+
+.carrossel-fotos {
+    overflow: hidden;
+    width: 80rem;
+    height: 40rem;
     margin-left: 20rem;
     margin-bottom: 20rem;
 }
 
-.foto-galeria{
+.foto-galeria {
     object-fit: cover;
-    width: 60rem;
-    height: 40rem;
+    width: 80rem;
+    height: 50rem;
+}
+
+@media screen and (max-width: 550px) {
+    .noticias img {
+        width: 100%;
+    }
+
+    .noticias {
+        margin-left: 5rem;
+    }
+
+    .carrossel-noticia i:first-child {
+        left: 2%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .noticias img {
+        width: calc(100% / 2);
+    }
 }
